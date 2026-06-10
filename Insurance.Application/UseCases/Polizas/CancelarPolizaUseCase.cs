@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Insurance.Application.Interfaces.Repositories;
+
+namespace Insurance.Application.UseCases.Polizas;
+
+public class CancelarPolizaUseCase
+{
+    private readonly IPolizaRepository _repository;
+
+    public CancelarPolizaUseCase(
+        IPolizaRepository repository)
+    {
+        _repository = repository;
+    }
+
+    public async Task ExecuteAsync(
+        int polizaId,
+        int usuarioId,
+        string observacion)
+    {
+        await _repository.CancelarAsync(
+            polizaId,
+            usuarioId,
+            observacion);
+    }
+}

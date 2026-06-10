@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37314.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.API", "Insurance.API\Insurance.API.csproj", "{971A07F4-7968-45F3-9845-6074A75CCBDA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB} = {09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB}
+		{7D46F1C2-590E-4930-AA46-5E5CBB681ECB} = {7D46F1C2-590E-4930-AA46-5E5CBB681ECB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.Application", "Insurance.Application\Insurance.Application.csproj", "{09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06} = {17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.Domain", "Insurance.Domain\Insurance.Domain.csproj", "{17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.Infrastructure", "Insurance.Infrastructure\Insurance.Infrastructure.csproj", "{7D46F1C2-590E-4930-AA46-5E5CBB681ECB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB} = {09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB}
+		{17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06} = {17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Insurance.Tests", "Insurance.Tests\Insurance.Tests.csproj", "{39381E48-784D-4092-B1B8-4CC55E3EDD93}"
+	ProjectSection(ProjectDependencies) = postProject
+		{09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB} = {09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB}
+		{17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06} = {17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06}
+		{7D46F1C2-590E-4930-AA46-5E5CBB681ECB} = {7D46F1C2-590E-4930-AA46-5E5CBB681ECB}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{971A07F4-7968-45F3-9845-6074A75CCBDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{971A07F4-7968-45F3-9845-6074A75CCBDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{971A07F4-7968-45F3-9845-6074A75CCBDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{971A07F4-7968-45F3-9845-6074A75CCBDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09580EDE-7AC9-47CF-A1FC-E1DA7F4E65DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17FDD2AE-B2DA-40EF-ADC9-4C65D4B7BA06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D46F1C2-590E-4930-AA46-5E5CBB681ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D46F1C2-590E-4930-AA46-5E5CBB681ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D46F1C2-590E-4930-AA46-5E5CBB681ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D46F1C2-590E-4930-AA46-5E5CBB681ECB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39381E48-784D-4092-B1B8-4CC55E3EDD93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39381E48-784D-4092-B1B8-4CC55E3EDD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39381E48-784D-4092-B1B8-4CC55E3EDD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39381E48-784D-4092-B1B8-4CC55E3EDD93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5038A9AD-FAC9-4322-914E-D37E857258BE}
+	EndGlobalSection
+EndGlobal
