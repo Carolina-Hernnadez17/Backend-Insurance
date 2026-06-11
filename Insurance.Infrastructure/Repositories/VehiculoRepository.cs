@@ -75,6 +75,18 @@ public class VehiculoRepository
                 CommandType.StoredProcedure);
     }
 
+    public async Task ActivarAsync(int id)
+    {
+        using var connection =
+            _factory.CreateConnection();
+
+        await connection.ExecuteAsync(
+            "sp_Vehiculo_Activar",
+            new { Id = id },
+            commandType:
+            CommandType.StoredProcedure);
+    }
+
     public async Task<Vehiculo?>
         ObtenerPorIdAsync(int id)
     {

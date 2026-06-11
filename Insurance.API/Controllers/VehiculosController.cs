@@ -14,16 +14,21 @@ public class VehiculosController : ControllerBase
     private readonly CrearVehiculoUseCase _crear;
     private readonly ActualizarVehiculoUseCase _actualizar;
     private readonly ListarVehiculosUseCase _listar;
+    private readonly ActivarVehiculoUseCase _activar;
     private readonly DesactivarVehiculoUseCase _desactivar;
 
     public VehiculosController(
         CrearVehiculoUseCase crear,
         ActualizarVehiculoUseCase actualizar,
-        ListarVehiculosUseCase listar)
+        ListarVehiculosUseCase listar,
+        DesactivarVehiculoUseCase desactivar,
+        ActivarVehiculoUseCase activar)
     {
         _crear = crear;
         _actualizar = actualizar;
         _listar = listar;
+        _desactivar = desactivar;
+        _activar = activar;
     }
 
     [Authorize(Roles = "Administrador,Ejecutivo")]
@@ -61,6 +66,20 @@ public class VehiculosController : ControllerBase
         return Ok(new
         {
             Mensaje = "Vehículo actualizado correctamente"
+        });
+    }
+
+    [Authorize(Roles = "Administrador")]
+    [HttpPut("activar/{id}")]
+    public async Task<IActionResult>
+        Activar(int id)
+    {
+        await _activar.ExecuteAsync(id);
+
+        return Ok(new
+        {
+            Mensaje =
+                "Vehículo activado correctamente"
         });
     }
 
