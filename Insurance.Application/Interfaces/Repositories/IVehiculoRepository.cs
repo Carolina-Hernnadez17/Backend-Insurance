@@ -17,6 +17,8 @@ public interface IVehiculoRepository
 
     Task ActivarAsync(int id);
 
+    Task<IEnumerable<Vehiculo>> ListarPorClienteAsync(int clienteId);
+
     Task<Vehiculo?> ObtenerPorIdAsync(int id);
 
     Task DesactivarAsync(int id);

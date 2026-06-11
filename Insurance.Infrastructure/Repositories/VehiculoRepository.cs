@@ -101,6 +101,25 @@ public class VehiculoRepository
                 CommandType.StoredProcedure);
     }
 
+
+    public async Task<IEnumerable<Vehiculo>>
+        ListarPorClienteAsync(
+            int clienteId)
+    {
+        using var connection =
+            _factory.CreateConnection();
+
+        return await connection
+            .QueryAsync<Vehiculo>(
+                "sp_Vehiculo_ListarPorCliente",
+                new
+                {
+                    ClienteId = clienteId
+                },
+                commandType:
+                CommandType.StoredProcedure);
+    }
+
     public async Task DesactivarAsync(
         int id)
     {

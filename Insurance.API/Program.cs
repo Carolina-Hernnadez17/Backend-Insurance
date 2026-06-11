@@ -113,6 +113,7 @@ builder.Services.AddScoped<CrearVehiculoUseCase>();
 builder.Services.AddScoped<ActualizarVehiculoUseCase>();
 builder.Services.AddScoped<DesactivarVehiculoUseCase>();
 builder.Services.AddScoped<ActivarVehiculoUseCase>();
+builder.Services.AddScoped<ListarVehiculosPorClienteUseCase>();
 builder.Services.AddScoped<ListarVehiculosUseCase>();
 
 builder.Services.AddScoped<CrearPolizaUseCase>();

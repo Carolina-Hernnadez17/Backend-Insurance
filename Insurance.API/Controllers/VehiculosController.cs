@@ -14,17 +14,20 @@ public class VehiculosController : ControllerBase
     private readonly CrearVehiculoUseCase _crear;
     private readonly ActualizarVehiculoUseCase _actualizar;
     private readonly ListarVehiculosUseCase _listar;
+    private readonly ListarVehiculosPorClienteUseCase _listarPorCliente;
     private readonly ActivarVehiculoUseCase _activar;
     private readonly DesactivarVehiculoUseCase _desactivar;
 
     public VehiculosController(
         CrearVehiculoUseCase crear,
         ActualizarVehiculoUseCase actualizar,
+        ListarVehiculosPorClienteUseCase listarPorCliente,
         ListarVehiculosUseCase listar,
         DesactivarVehiculoUseCase desactivar,
         ActivarVehiculoUseCase activar)
     {
         _crear = crear;
+        _listarPorCliente = listarPorCliente;
         _actualizar = actualizar;
         _listar = listar;
         _desactivar = desactivar;
@@ -81,6 +84,15 @@ public class VehiculosController : ControllerBase
             Mensaje =
                 "Vehículo activado correctamente"
         });
+    }
+
+    [HttpGet("cliente/{clienteId}")]
+    public async Task<IActionResult>
+        ListarPorCliente(int clienteId)
+    {
+        return Ok(
+            await _listarPorCliente.ExecuteAsync(
+                clienteId));
     }
 
     [Authorize(

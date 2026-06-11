@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
+using Insurance.Application.DTOs.Polizas;
 using Insurance.Application.Interfaces.Repositories;
 using Insurance.Domain.Entities;
 using Insurance.Infrastructure.Data;
@@ -151,6 +152,19 @@ public class PolizaRepository
                 {
                     Id = id
                 },
+                commandType:
+                CommandType.StoredProcedure);
+    }
+
+    public async Task<IEnumerable<PolizaListDto>>
+        ListarCompletoAsync()
+    {
+        using var connection =
+            _factory.CreateConnection();
+
+        return await connection
+            .QueryAsync<PolizaListDto>(
+                "sp_Poliza_Listar",
                 commandType:
                 CommandType.StoredProcedure);
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Insurance.Application.DTOs.Polizas;
 using Insurance.Domain.Entities;
 
 namespace Insurance.Application.Interfaces.Repositories;
@@ -27,6 +28,10 @@ public interface IPolizaRepository
     Task<IEnumerable<Poliza>>
         ListarPorClienteAsync(
             int clienteId);
+
+    Task<IEnumerable<PolizaListDto>>
+        ListarCompletoAsync();
+
     Task ReactivarAsync(
         int polizaId,
         int usuarioId,

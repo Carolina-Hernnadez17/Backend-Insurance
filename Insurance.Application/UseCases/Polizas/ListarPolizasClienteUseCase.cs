@@ -20,6 +20,7 @@ public class ListarPolizasUseCase
     public async Task<object>
         ExecuteAsync()
     {
-        return await _repository.ListarAsync();
+        return await _repository
+            .ListarCompletoAsync();
     }
 }
